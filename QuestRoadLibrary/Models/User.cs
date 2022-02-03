@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuestRoadLibrary.Models;
+using System;
 using System.Collections.Generic;
 
 #nullable disable
@@ -17,7 +18,7 @@ namespace QuestRoadLibrary
         public string Phone { get; set; }
         public string Password { get; set; }
         public string Name { get; set; }
-        public int Role { get; set; }
+        public UserRole Role { get; set; }
         public int? CompanyId { get; set; }
 
         public virtual ICollection<Member> Members { get; set; }

@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace QuestRoadLibrary
 {
-    public partial class QuestRoadDb1Context : DbContext
+    public partial class QuestRoadContext : DbContext
     {
-        public QuestRoadDb1Context()
+        public QuestRoadContext()
         {
         }
 
-        public QuestRoadDb1Context(DbContextOptions<QuestRoadDb1Context> options)
+        public QuestRoadContext(DbContextOptions<QuestRoadContext> options)
             : base(options)
         {
         }

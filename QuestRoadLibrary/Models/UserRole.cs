@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace QuestRoadLibrary.Models
 {
-    class UserRoles
+    public enum UserRole
     {
+        User = 1,
+        Admin = 2,
+        Organization = 3
     }
 }
