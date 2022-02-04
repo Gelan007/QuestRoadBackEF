@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestRoadBackEF", "QuestRoadBackEF.csproj", "{493BD90E-4321-40C6-9EF1-B121F3CD8CDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestRoadBackEF", "QuestRoadBackEF.csproj", "{493BD90E-4321-40C6-9EF1-B121F3CD8CDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestRoadLibrary", "..\QuestRoadLibrary\QuestRoadLibrary.csproj", "{6D7F377E-BB66-437B-A312-93D03D8A1E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuestRoadLibrary", "..\QuestRoadLibrary\QuestRoadLibrary.csproj", "{6D7F377E-BB66-437B-A312-93D03D8A1E21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestRoadAuth", "..\QuestRoadAuth\QuestRoadAuth.csproj", "{802AF594-EE8E-4D52-95ED-3ECCB3D967ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6D7F377E-BB66-437B-A312-93D03D8A1E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D7F377E-BB66-437B-A312-93D03D8A1E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D7F377E-BB66-437B-A312-93D03D8A1E21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{802AF594-EE8E-4D52-95ED-3ECCB3D967ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{802AF594-EE8E-4D52-95ED-3ECCB3D967ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{802AF594-EE8E-4D52-95ED-3ECCB3D967ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{802AF594-EE8E-4D52-95ED-3ECCB3D967ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
