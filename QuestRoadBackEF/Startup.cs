@@ -40,15 +40,36 @@ namespace QuestRoadBackEF
             });
             services.AddControllers();
 
-            var authOptionsConfiguration = Configuration.GetSection("Auth");
-            services.Configure<AuthOptions>(authOptionsConfiguration);
+            var authOptions = Configuration.GetSection("Auth").Get<AuthOptions>();
+
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+               .AddJwtBearer(options =>
+               {
+                   options.RequireHttpsMetadata = false;
+                   options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                   {
+                       ValidateIssuer = true,
+                       ValidIssuer = authOptions.Issuer,
+                       ValidateAudience = true,
+                       ValidAudience = authOptions.Audience,
+                       ValidateLifetime = true,
+                       IssuerSigningKey = authOptions.GetSymmetricSecurityKey(),
+                       ValidateIssuerSigningKey = true,
+
+
+                   };
+               });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuestRoadBackEF", Version = "v1" });
             });
-            services.AddScoped<IUserRepository, UserRepository>();
+
             services.AddScoped<ITeamRepository, TeamRepository>();
             services.AddScoped<IQuestRepository, QuestRepository>();
+            services.AddScoped<IBookingRepository, BookingRepository>();
+            services.AddScoped<IMemberRepository, MemberRepository>();
+            services.AddScoped<IHelpRepository, HelpRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

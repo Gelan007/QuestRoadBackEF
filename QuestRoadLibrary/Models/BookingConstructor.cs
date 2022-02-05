@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuestRoadLibrary.Models
 {
-    public class BookingContructor
+    public class BookingConstructor
     {
         public int QuestId { get; set; }
         public string TeamName { get; set; }

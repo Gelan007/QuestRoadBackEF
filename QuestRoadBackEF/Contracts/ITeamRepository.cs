@@ -11,6 +11,8 @@ namespace QuestRoadBackEF.Contracts
         public Task<IEnumerable<Team>> GetTeamsAsync();
         public Task<Team> GetTeamAsync(int id);
         public Task CreateTeamAsync(Team model);
-      
+        public Task CreateTeamFromBookingAsync(string name, int count, string phone);
+        public Task<Team> GetTeamByNameAndPhoneAsync(string name, string phone);
+
     }
 }

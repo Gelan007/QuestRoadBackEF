@@ -37,7 +37,7 @@ namespace QuestRoadBackEF.Controllers
             }
         }
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetTeamAsync(int id)
+        public async Task<IActionResult> GetTeamAsync([FromRoute]int id)
         {
             try
             {

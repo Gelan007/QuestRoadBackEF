@@ -35,5 +35,22 @@ namespace QuestRoadBackEF.Repositories
             await _db.SaveChangesAsync();
         }
 
+        public async Task CreateTeamFromBookingAsync(string name, int count, string phone)
+        {
+            var team = new Team();
+            team.Name = name;
+            team.Count = count;
+            team.Phone = phone;
+
+            await _db.Teams.AddAsync(team);
+            await _db.SaveChangesAsync();
+
+        }
+
+        public async Task<Team> GetTeamByNameAndPhoneAsync(string name, string phone)
+        {
+            return await _db.Teams.FirstOrDefaultAsync(t => t.Name == name && t.Phone == phone);
+        }
     }
+
 }

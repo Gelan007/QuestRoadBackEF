@@ -21,6 +21,7 @@ namespace QuestRoadAuth.Controllers
     {
         private readonly IUserRepository _userRepository;
         private readonly IOptions<AuthOptions> _options;
+
         public UserController(IUserRepository userRepository, IOptions<AuthOptions> options)
         {
             _userRepository = userRepository;

@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\QuestRoadAuth\QuestRoadAuth.csproj" />
     <ProjectReference Include="..\QuestRoadLibrary\QuestRoadLibrary.csproj" />
   </ItemGroup>
 

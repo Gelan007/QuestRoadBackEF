@@ -1,4 +1,5 @@
 ﻿using QuestRoadLibrary;
+using QuestRoadLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace QuestRoadBackEF.Contracts
 {
-    public interface IQuestRepository
+    public interface IHelpRepository
     {
-        public Task<IEnumerable<Quest>> GetQuestsAsync();
-        public Task<Quest> GetQuestAsync(int id);
+        public Task<User> GetPhoneByIdAsync(int id);
+        public Task<UserRole> IsAdminAsync(int id);
     }
 }

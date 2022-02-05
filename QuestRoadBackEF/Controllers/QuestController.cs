@@ -20,12 +20,12 @@ namespace QuestRoadBackEF.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetQuests()
+        public async Task<IActionResult> GetQuestsAsync()
         {
             try
             {
-                var quests = await _questRepository.GetQuests();
-                if(quests == null)
+                var quests = await _questRepository.GetQuestsAsync();
+                if (quests == null)
                 {
                     return StatusCode(404, "Quests not found");
                 }
@@ -33,6 +33,24 @@ namespace QuestRoadBackEF.Controllers
             }
             catch (Exception ex)
             {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetQuestAsync([FromRoute]int id)
+        {
+            try
+            {
+                var quest = await _questRepository.GetQuestAsync(id);
+                if (quest == null)
+                {
+                    return StatusCode(404, "Not found");
+                }
+                return Ok(quest);
+            }
+            catch (Exception ex)
+            {
+
                 return StatusCode(500, ex.Message);
             }
         }
