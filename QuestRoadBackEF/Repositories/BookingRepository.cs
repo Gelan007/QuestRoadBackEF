@@ -32,7 +32,13 @@ namespace QuestRoadBackEF.Repositories
             await _db.Bookings.AddAsync(booking);
             await _db.SaveChangesAsync();
         }
-       
-           
+
+        public async Task UpdateBookingPriceAsync(int teamId, double coef)
+        {
+            var booking = await _db.Bookings.FirstOrDefaultAsync(b => b.TeamId == teamId);
+            booking.Price = (int)(booking.Price * coef);
+            _db.Entry(booking).State = EntityState.Modified;
+            await _db.SaveChangesAsync();
+        }
     }
 }

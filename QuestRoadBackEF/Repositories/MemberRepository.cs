@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuestRoadBackEF.Contracts;
 using QuestRoadLibrary;
+using QuestRoadLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,19 @@ namespace QuestRoadBackEF.Repositories
             await _db.SaveChangesAsync();
         }
 
-        
+        public async Task CreateMemberAsync(Member model)
+        {
+            var member = new Member();
+            member.UserId = model.UserId;
+            member.TeamId = model.TeamId;
+            member.WhenAssigned = model.WhenAssigned;
+            _db.Members.Add(member);
+            await _db.SaveChangesAsync();
+        }
+        public async Task<int> GetCountOfUsersByTeamIdAsync(int id)
+        {
+            return await _db.Members.CountAsync(u => u.TeamId == id);
+
+        }
     }
 }
