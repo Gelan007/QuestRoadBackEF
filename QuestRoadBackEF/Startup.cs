@@ -70,6 +70,7 @@ namespace QuestRoadBackEF
             services.AddScoped<IBookingRepository, BookingRepository>();
             services.AddScoped<IMemberRepository, MemberRepository>();
             services.AddScoped<IHelpRepository, HelpRepository>();
+            services.AddScoped<IProfileRepository, ProfileRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
