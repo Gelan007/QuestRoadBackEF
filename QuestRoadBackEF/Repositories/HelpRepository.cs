@@ -22,9 +22,11 @@ namespace QuestRoadBackEF.Repositories
             return await _db.Users.FirstOrDefaultAsync(u => u.UserId == id);
         }
 
-        public Task<UserRole> IsAdminAsync(int id)
+        public async Task<UserRole> IsAdminAsync(int id)
         {
-            throw new NotImplementedException();
+            var user = await _db.Users.FirstOrDefaultAsync(u => u.UserId == id);
+            return user.Role;
         }
+        
     }
 }
